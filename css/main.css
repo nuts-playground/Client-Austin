@@ -36,10 +36,13 @@ img {
   display: block;
   width: 100%;
 }
+/*  */
 #container {
   width: 100%;
+  /* s */
   height: 100%;
 }
+
 #wrap {
   max-width: 1024px;
   padding: 0 20px;
