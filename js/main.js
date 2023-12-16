@@ -7,7 +7,7 @@ loginBtn.addEventListener('click', () => {
     loginForm.classList.remove('notVb');
 });
 loginBg.addEventListener('click', (e) => {
-    if (e.target == loginBg) {
+    if (e.target === loginBg) {
         loginForm.classList.add('notVb');
         loginForm.classList.remove('vb');
     }
