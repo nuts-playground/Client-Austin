@@ -12,5 +12,6 @@ fetch("http://localhost:3000/User")
       childElement.className = `title${i}`;
       childElement.innerText = `${i + 1}번째 유저 : ${data[i].name}`;
       wrap.append(childElement);
+      //
     }
   });
