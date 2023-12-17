@@ -19,6 +19,9 @@
 .t_center {
     text-align: center;
 }
+.t_right {
+    text-align: right;
+}
 .t_small {
     font-size: 14px;
     /*  */
@@ -37,6 +40,21 @@
 }
 .ml30 {
     margin-left: 30px;
+}
+.mt10 {
+    margin-top: 10px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.mt30 {
+    margin-top: 30px;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.mb30 {
+    margin-bottom: 30px;
 }
 .opa0 {
     opacity: 0;
@@ -86,6 +104,33 @@ img {
     display: block;
     width: 100%;
 }
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type='text'],
+input[type='password'] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
 
 .container {
     width: 100%;
@@ -121,7 +166,6 @@ main {
 }
 #sectionFirst {
     margin-top: 80px;
-    /* height: 3000px; */
 }
 
 #sectionFirst .mainContent {
@@ -165,4 +209,9 @@ main {
     border-radius: 8px;
     margin: auto;
     transform: translateY(calc(50vh - 150px));
+}
+
+#loginFormModal .input-group {
+    margin-bottom: 15px;
+    text-align: left;
 }
