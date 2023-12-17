@@ -116,7 +116,10 @@ ol,
 ul {
     list-style: none;
 }
-/*  */
+* {
+    --main-color: #4caf50;
+    --sub-color: #ff7f00;
+}
 li {
     cursor: pointer;
 }
