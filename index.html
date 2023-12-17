@@ -47,8 +47,19 @@
             <div id="loginFormModal" class="notVb">
                 <div class="loginBg">
                     <form class="loginForm t_center">
-                        <h4 class="t_big">로그인</h4>
-                        <input type="text" />
+                        <h4 class="mb30 mt20">로그인</h4>
+                        <div class="input-group">
+                            <label class="mb10" for="username">Username</label>
+                            <input type="text" id="username" name="username" required />
+                        </div>
+                        <div class="input-group">
+                            <label class="mb10" for="password">Password</label>
+                            <input type="password" id="password" name="password" required />
+                        </div>
+                        <div class="loginBtnForm t_right mt30">
+                            <button type="button" style="background-color: var(--sub-color)">Join</button>
+                            <button class="ml10" type="submit">Login</button>
+                        </div>
                     </form>
                 </div>
             </div>
