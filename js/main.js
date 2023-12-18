@@ -13,22 +13,24 @@ document.querySelector('.dark').addEventListener('click', toggleTheme);
 document.querySelector('.light').addEventListener('click', toggleTheme);
 
 document.querySelector('.clickLogin').addEventListener('click', (e) => {
-    fetch('/js/db.json').then((res) =>
-        res.json().then((data) => {
-            const User = data.USER;
-            const LoginId = document.querySelector('#username').value;
-            const LoginPw = document.querySelector('#password').value;
-            const CheckUser = User.find((user) => user.ID === LoginId && user.PW === LoginPw);
+    fetch('/js/db.json').then(
+        (res) =>
+            res.json().then((data) => {
+                const User = data.USER;
+                const LoginId = document.querySelector('#username').value;
+                const LoginPw = document.querySelector('#password').value;
+                const CheckUser = User.find((user) => user.ID === LoginId && user.PW === LoginPw);
 
-            if (CheckUser) {
-                alert(`환영합니다 ${CheckUser.ID}님`);
-            } else {
-                alert('아이디 또는 비밀번호가 일치하지 않습니다.');
-                document.querySelector('.loginForm').submit = function () {
-                    return false;
-                };
-            }
-        })
+                if (CheckUser) {
+                    alert(`환영합니다 ${CheckUser.ID}님`);
+                } else {
+                    alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+                    document.querySelector('.loginForm').submit = function () {
+                        return false;
+                    };
+                }
+            })
+        //
     );
 });
 // 함수영역
