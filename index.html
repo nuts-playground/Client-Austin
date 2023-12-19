@@ -47,21 +47,69 @@
             <footer></footer>
             <div id="loginFormModal" class="notVb">
                 <div class="loginBg">
-                    <form class="loginForm t_center">
+                    <div class="loginForm t_center">
                         <h4 class="mb30 mt20">로그인</h4>
-                        <div class="input-group">
-                            <label class="mb10" for="username">Username</label>
-                            <input type="text" id="username" name="username" required />
-                        </div>
-                        <div class="input-group">
-                            <label class="mb10" for="password">Password</label>
-                            <input type="password" id="password" name="password" required />
-                        </div>
-                        <div class="loginBtnForm t_right mt30">
-                            <button type="button" style="background-color: var(--sub-color)">Join</button>
-                            <button class="clickLogin ml10" type="submit">Login</button>
-                        </div>
-                    </form>
+                        <form>
+                            <div class="input-group">
+                                <label class="mb10" for="username">Username</label>
+                                <input type="text" id="username" name="username" required />
+                            </div>
+                            <div class="input-group">
+                                <label class="mb10" for="password">Password</label>
+                                <input type="password" id="password" name="password" required />
+                            </div>
+                            <div class="loginBtnForm t_right mt30">
+                                <button type="button" style="background-color: var(--sub-color)">Join</button>
+                                <button class="clickLogin ml10" type="submit">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="joinFormModal">
+                <div class="joinBg">
+                    <div class="joinForm">
+                        <h2 class="mb30 mt20 t_center">회원 가입</h2>
+                        <form>
+                            <div class="input-group">
+                                <p>이름</p>
+                                <input class="mb10 mt10" type="text" name="fullname" placeholder="이름" required />
+                                <div class="flex-box flex-between flex-middle">
+                                    <p class="hide t_danger">올바른 이름이 아닙니다</p>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <p>아이디</p>
+                                <input class="mb10 mt10" type="text" name="email" placeholder="아이디" required />
+                                <div class="flex-box flex-between flex-middle">
+                                    <p class="hide t_danger">올바른 아이디가 아닙니다</p>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <p>비밀번호</p>
+                                <input
+                                    class="mb10 mt10"
+                                    type="password"
+                                    name="password"
+                                    placeholder="비밀번호"
+                                    required
+                                />
+                                <input type="password" name="password" placeholder="비밀번호 확인" required />
+                                <div class="mt10 flex-box flex-between flex-middle">
+                                    <p class="t_danger"></p>
+                                    <input
+                                        type="button"
+                                        value="비밀번호 확인"
+                                        style="border: 1px solid black !important; font-size: 12px; padding: 2px"
+                                    />
+                                </div>
+                            </div>
+                            <div class="t_center mt30" style="margin-bottom: 20px">
+                                <button type="submit">가입하기</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <script src="/js/main.js"></script>
