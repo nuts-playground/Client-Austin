@@ -1,9 +1,9 @@
 {
     "USER": [
-        { "ID": "iron", "PW": "iron", "NAME": "아이언", "AGE": 20 },
-        { "ID": "jose", "PW": "jose", "NAME": "호세", "AGE": 20 },
-        { "ID": "eric", "PW": "eric", "NAME": "에릭", "AGE": 20 },
-        { "ID": "jorny", "PW": "jorny", "NAME": "조니", "AGE": 20 },
-        { "ID": "austin", "PW": "austin", "NAME": "오스틴", "AGE": 10 }
+        { "ID": "iron", "PW": "iron", "NAME": "아이언" },
+        { "ID": "jose", "PW": "jose", "NAME": "호세" },
+        { "ID": "eric", "PW": "eric", "NAME": "에릭" },
+        { "ID": "jorny", "PW": "jorny", "NAME": "조니" },
+        { "ID": "austin", "PW": "austin", "NAME": "오스틴" }
     ]
 }
