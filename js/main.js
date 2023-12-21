@@ -37,6 +37,14 @@ document.querySelector('.clickLogin').addEventListener('click', (e) => {
         //
     );
 });
+
+// const xhr = new XMLHttpRequest();
+// xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');
+// xhr.send();
+// xhr.onload = () => {
+//     console.log(xhr.response);
+// };
+
 // 함수영역
 function toggleTheme() {
     const body = document.querySelector('body');
