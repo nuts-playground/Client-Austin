@@ -33,6 +33,9 @@
     font-size: 12px;
     color: red;
 }
+.t_green {
+    color: green;
+}
 .ml5 {
     margin-left: 5px;
 }
