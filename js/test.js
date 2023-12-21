@@ -32,4 +32,12 @@ const counter = (function () {
 })();
 console.log(counter.value());
 
+// fetch
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');
+xhr.send();
+xhr.onload = () => {
+    console.log(xhr.response);
+};
+
 //페이지 네이션 구현해보기
