@@ -9,6 +9,7 @@ loginBg.addEventListener('click', (e) => {
     }
 });
 
+document.querySelector('.pwCheck').onclick = checkPassword;
 document.querySelector('.dark').onclick = toggleTheme;
 document.querySelector('.light').onclick = toggleTheme;
 
@@ -46,6 +47,18 @@ document.querySelector('.clickLogin').addEventListener('click', (e) => {
 // };
 
 // 함수영역
+
+function checkPassword() {
+    const pw1 = document.querySelector('.joinPwFirst');
+    const pw2 = document.querySelector('.joinPwTwo');
+    const t_pwCheck = document.querySelector('.t_pwCheck');
+    if (pw1.value === pw2.value && pw1.value !== '' && pw2.value !== '') {
+        t_pwCheck.innerText = '';
+    } else {
+        t_pwCheck.innerText = '비밀번호가 일치하지 않습니다';
+    }
+}
+
 function toggleTheme() {
     const body = document.querySelector('body');
     const darkButton = document.querySelector('.dark');
