@@ -2,15 +2,15 @@ const loginForm = document.querySelector('#loginFormModal');
 const loginBg = document.querySelector('.loginBg');
 const loginBtn = document.querySelector('.loginBtn');
 
-loginBtn.addEventListener('click', toggleFormVisibility);
+loginBtn.onclick = toggleFormVisibility;
 loginBg.addEventListener('click', (e) => {
     if (e.target === loginBg) {
         toggleFormVisibility();
     }
 });
 
-document.querySelector('.dark').addEventListener('click', toggleTheme);
-document.querySelector('.light').addEventListener('click', toggleTheme);
+document.querySelector('.dark').onclick = toggleTheme;
+document.querySelector('.light').onclick = toggleTheme;
 
 document.querySelector('.clickLogin').addEventListener('click', (e) => {
     e.preventDefault();
