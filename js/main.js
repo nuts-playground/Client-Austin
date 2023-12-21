@@ -39,13 +39,6 @@ document.querySelector('.clickLogin').addEventListener('click', (e) => {
     );
 });
 
-// const xhr = new XMLHttpRequest();
-// xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');
-// xhr.send();
-// xhr.onload = () => {
-//     console.log(xhr.response);
-// };
-
 // 함수영역
 
 function checkPassword() {
@@ -53,9 +46,11 @@ function checkPassword() {
     const pw2 = document.querySelector('.joinPwTwo');
     const t_pwCheck = document.querySelector('.t_pwCheck');
     if (pw1.value === pw2.value && pw1.value !== '' && pw2.value !== '') {
-        t_pwCheck.innerText = '';
+        t_pwCheck.innerText = '비밀번호가 일치합니다';
+        t_pwCheck.classList.add('t_green');
     } else {
         t_pwCheck.innerText = '비밀번호가 일치하지 않습니다';
+        t_pwCheck.classList.remove('t_green');
     }
 }
 
