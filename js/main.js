@@ -1,6 +1,7 @@
 const loginForm = document.querySelector('#loginFormModal');
 const loginBg = document.querySelector('.loginBg');
 const loginBtn = document.querySelector('.loginBtn');
+const clickLogin = document.querySelector('.clickLogin');
 
 loginBtn.onclick = toggleFormVisibility;
 loginBg.addEventListener('click', (e) => {
@@ -13,31 +14,44 @@ document.querySelector('.pwCheck').onclick = checkPassword;
 document.querySelector('.dark').onclick = toggleTheme;
 document.querySelector('.light').onclick = toggleTheme;
 
-document.querySelector('.clickLogin').addEventListener('click', (e) => {
+// Login
+clickLogin.addEventListener('click', (e) => {
     e.preventDefault();
-    fetch('/js/db.json').then(
-        (res) =>
-            res
-                .json()
-                .then((data) => {
-                    const User = data.USER;
-                    const LoginId = document.querySelector('#username').value;
-                    const LoginPw = document.querySelector('#password').value;
-                    const CheckUser = User.find((user) => user.ID === LoginId && user.PW === LoginPw);
-
-                    if (CheckUser) {
-                        alert(`환영합니다 ${CheckUser.NAME}님`);
-                        document.querySelector('.loginForm').submit();
-                    } else {
-                        alert('아이디 또는 비밀번호가 일치하지 않습니다.');
-                    }
-                })
-                .catch(() => {
-                    alert('오류 발생');
-                })
-        //
-    );
+    async function requestAfter() {
+        try {
+            await request();
+            console.log('데이터 불러오기 성공');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    requestAfter();
 });
+async function request() {
+    try {
+        const URL = '/js/db.json';
+        const request = await fetch(URL, { method: 'GET' });
+        if (!request.ok) {
+            throw new Error('에러');
+        }
+        const data = await request.json();
+        console.log(data);
+        const User = data.USER;
+        const LoginId = document.querySelector('#username').value;
+        const LoginPw = document.querySelector('#password').value;
+        const CheckUser = User.find((user) => user.ID === LoginId && user.PW === LoginPw);
+        if (CheckUser) {
+            alert(`환영합니다 ${CheckUser.NAME}님`);
+            document.querySelector('.loginForm').submit();
+        } else {
+            alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+        }
+    } catch (error) {
+        console.log(error);
+    } finally {
+        console.log('끝');
+    }
+}
 
 // 함수영역
 
