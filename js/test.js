@@ -40,4 +40,17 @@ xhr.onload = () => {
     console.log(xhr.response);
 };
 
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        title: 'foo',
+        body: 'bar',
+        userId: '101',
+    }),
+})
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data);
+    });
 //페이지 네이션 구현해보기
