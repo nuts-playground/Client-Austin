@@ -92,6 +92,7 @@ function solution4(name, yearning, photo) {
     const answer = [];
     const hash = new Map();
     // new Map(["a","b"]) 를 통해 'a' => 'b' 라는 객체(참조값) 생성
+    // 자세한 사항은 => https://velog.io/@minew1995/JavaScript-new-Map
     name.forEach((item, index) => {
         hash.set(item, yearning[index]);
     });
@@ -111,3 +112,17 @@ function solution4(name, yearning, photo) {
     console.log(answer);
     return answer;
 }
+// 5. 달리기 경주
+function solution5(players, calling) {
+    for (let i = 0; i < calling.length; i++) {
+        let num = players.indexOf(calling[i]);
+        if (num > 0) {
+            const test = players[num - 1];
+            players[num - 1] = players[num];
+            players[num] = test;
+        }
+    }
+    return players;
+}
+
+solution5(['A', 'B', 'C', 'D'], ['B', 'C']);
