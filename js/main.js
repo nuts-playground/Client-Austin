@@ -10,7 +10,7 @@ loginBg.addEventListener('click', (e) => {
     }
 });
 
-document.querySelector('.pwCheck').onclick = checkPassword;
+// document.querySelector('.pwCheck').onclick = checkPassword;
 document.querySelector('.dark').onclick = toggleTheme;
 document.querySelector('.light').onclick = toggleTheme;
 
@@ -87,8 +87,49 @@ function toggleFormVisibility() {
     loginForm.classList.toggle('notVb');
 }
 
-function sticky() {
-    const ctn = document.querySelector('.container');
-    const height = ctn.scrollTop;
-    console.log(height);
+// 쿵쿵따
+let TotalNum = parseFloat(prompt('참가할 인원을 설정해주세요'));
+let TotalNumError = !!TotalNum == false || TotalNum == 0;
+const $order = document.querySelector('#order');
+const $wordInput = document.querySelector('#wordInput');
+const $word = document.querySelector('#word');
+const $clickBtn = document.querySelector('.clickBtn');
+let newWorld;
+let word;
+if (TotalNumError) {
+    TotalNum = parseFloat(prompt('참가할 인원을 다시 설정해주세요'));
+    if (TotalNumError) {
+        alert('넌 하지마라 그냥');
+        $wordInput.setAttribute('disabled');
+    }
 }
+const 제시어입력 = () => {
+    if (!word) {
+        word = newWorld;
+        $word.textContent = word;
+        $wordInput.value = '';
+        $order.textContent = Number($order.textContent) + 1;
+    } else {
+        if (word[word.length - 1] === newWorld[0]) {
+            word = newWorld;
+            $word.textContent = word;
+            $wordInput.value = '';
+            if (Number($order.textContent) < TotalNum) {
+                $order.textContent = Number($order.textContent) + 1;
+            } else {
+                $order.textContent = 1;
+            }
+        } else {
+            alert(`올바르지 않은 단어 입니다. ${$order.textContent}번째 참가자가 졌습니다`);
+            $order.textContent = 1;
+            $wordInput.value = '';
+            $word.textContent = '';
+            word = false;
+        }
+    }
+};
+const 쿵쿵따인풋 = (e) => {
+    newWorld = e.target.value;
+};
+$clickBtn.addEventListener('click', 제시어입력);
+$wordInput.addEventListener('input', 쿵쿵따인풋);
