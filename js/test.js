@@ -40,19 +40,19 @@ xhr.onload = () => {
     console.log(xhr.response);
 };
 
-fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-        title: 'foo',
-        body: 'bar',
-        userId: '101',
-    }),
-})
-    .then((res) => res.json())
-    .then((data) => {
-        console.log(data);
-    });
+// fetch('https://jsonplaceholder.typicode.com/posts', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({
+//         title: 'foo',
+//         body: 'bar',
+//         userId: '101',
+//     }),
+// })
+//     .then((res) => res.json())
+//     .then((data) => {
+//         console.log(data);
+//     });
 //페이지 네이션 구현해보기
 
 // * 백준 프로그래머스
@@ -126,3 +126,54 @@ function solution5(players, calling) {
 }
 
 solution5(['A', 'B', 'C', 'D'], ['B', 'C']);
+
+// function solution6(sequence, k) {
+//     let answer = [];
+//     const length = sequence.length;
+//     if (length >= 5 && length < 100) {
+//         for (let i = 0; i < length; i++) {
+//             if (sequence[i] == k) {
+//                 answer.push(i, sequence[i]);
+//             } else if (sequence[i] + sequence[i + 1] == k) {
+//                 answer.push(i, sequence[i]);
+//             } else {
+//                 continue;
+//             }
+//         }
+//     }
+//     console.log(answer);
+//     return answer;
+// }
+// solution6([1, 2, 3, 4, 5, 6], 5);
+
+// for (let i = 1; i < 10; i++) {
+//     if (i % 2 == 0) {
+//         continue;
+//     }
+//     for (let j = 1; j < 10; j++) {
+//         if (j % 2 == 0) {
+//             continue;
+//         }
+//         console.log(`${i} * ${j} = ${i * j}`);
+//     }
+// }
+
+// let star = '*';
+// let starRepeat;
+// for (let i = 1; i < 6; i++) {
+//     starRepeat = star.repeat(i);
+//     console.log(starRepeat);
+// }
+
+// const str = ['가', '나', '다', '라', '마', '마'];
+// for (let i = 0; i < str.length; i++) {
+//     if (str[i] === '라') {
+//         str.splice(i, 1);
+//     }
+// }
+// while (str.indexOf('마') > -1) {
+//     str.splice(str.indexOf('마'), 1);
+// }
+// console.log(str);
+
+// 쿵쿵따
