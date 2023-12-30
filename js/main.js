@@ -88,7 +88,8 @@ function toggleFormVisibility() {
 }
 
 // 쿵쿵따
-let TotalNum = parseFloat(prompt('참가할 인원을 설정해주세요'));
+let TotalNum = 6;
+// let TotalNum = parseFloat(prompt('참가할 인원을 설정해주세요'));
 let TotalNumError = !!TotalNum == false || TotalNum == 0;
 const $order = document.querySelector('#order');
 const $wordInput = document.querySelector('#wordInput');
@@ -109,11 +110,13 @@ const 제시어입력 = () => {
         $word.textContent = word;
         $wordInput.value = '';
         $order.textContent = Number($order.textContent) + 1;
+        $wordInput.focus();
     } else {
         if (word[word.length - 1] === newWorld[0]) {
             word = newWorld;
             $word.textContent = word;
             $wordInput.value = '';
+            $wordInput.focus();
             if (Number($order.textContent) < TotalNum) {
                 $order.textContent = Number($order.textContent) + 1;
             } else {
@@ -125,11 +128,12 @@ const 제시어입력 = () => {
             $wordInput.value = '';
             $word.textContent = '';
             word = false;
+            $wordInput.focus();
         }
     }
 };
 const 쿵쿵따인풋 = (e) => {
     newWorld = e.target.value;
 };
-$clickBtn.addEventListener('click', 제시어입력);
-$wordInput.addEventListener('input', 쿵쿵따인풋);
+// $clickBtn.addEventListener('click', 제시어입력);
+// $wordInput.addEventListener('input', 쿵쿵따인풋);
