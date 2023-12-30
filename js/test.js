@@ -127,53 +127,26 @@ function solution5(players, calling) {
 
 solution5(['A', 'B', 'C', 'D'], ['B', 'C']);
 
-// function solution6(sequence, k) {
-//     let answer = [];
-//     const length = sequence.length;
-//     if (length >= 5 && length < 100) {
-//         for (let i = 0; i < length; i++) {
-//             if (sequence[i] == k) {
-//                 answer.push(i, sequence[i]);
-//             } else if (sequence[i] + sequence[i + 1] == k) {
-//                 answer.push(i, sequence[i]);
-//             } else {
-//                 continue;
-//             }
-//         }
-//     }
-//     console.log(answer);
-//     return answer;
-// }
-// solution6([1, 2, 3, 4, 5, 6], 5);
+//연속된 부분 수열의 합
+function solution6(sequence, k) {
+    let result = [];
+    let sum = 0;
+    let left = 0;
+    for (let right = 0; right < sequence.length; right++) {
+        sum += sequence[right];
+        while (sum > k) {
+            sum -= sequence[left];
+            left += 1;
+        }
 
-// for (let i = 1; i < 10; i++) {
-//     if (i % 2 == 0) {
-//         continue;
-//     }
-//     for (let j = 1; j < 10; j++) {
-//         if (j % 2 == 0) {
-//             continue;
-//         }
-//         console.log(`${i} * ${j} = ${i * j}`);
-//     }
-// }
+        if (sum === k) result.push([left, right]);
+    }
+    result.sort((a, b) => {
+        if (a[1] - a[0] === b[1] - b[0]) a[0] - b[0];
+        return a[1] - a[0] - (b[1] - b[0]);
+    });
 
-// let star = '*';
-// let starRepeat;
-// for (let i = 1; i < 6; i++) {
-//     starRepeat = star.repeat(i);
-//     console.log(starRepeat);
-// }
+    return result[0];
+}
 
-// const str = ['가', '나', '다', '라', '마', '마'];
-// for (let i = 0; i < str.length; i++) {
-//     if (str[i] === '라') {
-//         str.splice(i, 1);
-//     }
-// }
-// while (str.indexOf('마') > -1) {
-//     str.splice(str.indexOf('마'), 1);
-// }
-// console.log(str);
-
-// 쿵쿵따
+console.log(solution6([1, 2, 3, 4, 5, 6, 10, 25], 35));
