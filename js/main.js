@@ -100,7 +100,7 @@ let word;
 if (TotalNumError) {
     TotalNum = parseFloat(prompt('참가할 인원을 다시 설정해주세요'));
     if (TotalNumError) {
-        alert('넌 하지마라 그냥');
+        alert('게임을 이용할 수 없습니다');
         $wordInput.setAttribute('disabled');
     }
 }
