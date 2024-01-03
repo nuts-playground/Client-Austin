@@ -1,3 +1,4 @@
+// 리팩토링 필요 (전역변수 없애기)
 let numOne = '';
 let numTwo = '';
 let operator = '';
