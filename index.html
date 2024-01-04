@@ -13,23 +13,61 @@
     </head>
     <body>
         <div class="container">
-            <header style="box-shadow: 2px 2px 4px #4444">
+            <header>
                 <div class="wrap">
-                    <div class="headerWrap flex-box flex-between flex-middle">
-                        <div class="logoWrap">
-                            <img id="logo" src="/images/nuts-logo-noBg.png" alt="logo" />
+                    <div class="pdtb10">
+                        <div class="headerWrap flex-box flex-between flex-middle">
+                            <div class="logoWrap">
+                                <img id="logo" src="/images/austin.png" alt="logo" />
+                            </div>
+                            <ul id="nav" class="flex-box flex-middle">
+                                <li class="t_big">프로젝트</li>
+                                <li class="loginBtn ml30 t_big">로그인</li>
+                                <li class="ml30 light hide">
+                                    <span class="material-symbols-outlined"> light_mode </span>
+                                </li>
+                                <li class="ml30 dark"><span class="material-symbols-outlined"> dark_mode </span></li>
+                            </ul>
                         </div>
-                        <ul id="nav" class="flex-box">
-                            <li class="t_big">Project</li>
-                            <li class="loginBtn ml30 t_big">Login</li>
-                            <li class="ml30 light hide"><span class="material-symbols-outlined"> light_mode </span></li>
-                            <li class="ml30 dark"><span class="material-symbols-outlined"> dark_mode </span></li>
-                        </ul>
                     </div>
                 </div>
             </header>
+            <main>
+                <div style="height: 80px"></div>
 
-            <main></main>
+                <div class="wrap">
+                    <section id="introduce">
+                        <div class="sectionWrap">
+                            <div class="myInfo flex-box flex-middle">
+                                <img class="profileImg" src="./images/austin.png" alt="profile" />
+                                <div class="profileComment">
+                                    <p class="t_bold">반갑습니다!</p>
+                                    <p class="t_bold">오스틴 블로그입니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="project">
+                        <div class="sectionWrap">
+                            <div class="projectWrap flex-box">
+                                <ul class="mainProject">
+                                    <li class="projectMain"></li>
+                                </ul>
+                                <ul class="rightProject flex-box flex-wrap">
+                                    <li class="projectList"></li>
+                                    <li class="projectList"></li>
+                                    <li class="projectList"></li>
+                                    <li class="projectList"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section></section>
+                    <section></section>
+                    <section></section>
+                </div>
+            </main>
             <footer></footer>
             <div id="loginFormModal" class="notVb">
                 <div class="loginBg">
@@ -52,9 +90,7 @@
                     </div>
                 </div>
             </div>
-
             <script src="/js/main.js"></script>
-            <script src="/js/test.js"></script>
         </div>
     </body>
 </html>
