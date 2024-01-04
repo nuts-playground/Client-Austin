@@ -4,6 +4,9 @@
 .flex-box {
     display: flex;
 }
+.flex-wrap {
+    flex-wrap: wrap;
+}
 .flex-middle {
     align-items: center;
 }
@@ -27,7 +30,7 @@
     /*  */
 }
 .t_big {
-    font-size: 20px;
+    font-size: 18px;
 }
 .t_danger {
     font-size: 12px;
@@ -35,6 +38,10 @@
 }
 .t_green {
     color: green;
+}
+.pdtb10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .ml5 {
     margin-left: 5px;
@@ -144,7 +151,7 @@ button:hover {
     overflow-y: scroll;
     height: 100%;
     position: relative;
-    background: #e2e2e2;
+    background: #f5f5f5;
     transition: all 0.2s;
 }
 .container::-webkit-scrollbar {
@@ -161,77 +168,62 @@ header {
     position: fixed;
     z-index: 1;
     top: 0;
+
     background-color: #fff;
     transition: all 0.2s;
+
+    box-shadow: 2px 2px 4px #4444;
 }
 main {
     width: 100%;
 }
+
 #logo {
-    width: 80px;
-    height: 80px;
-}
-#sectionFirst {
-    margin-top: 80px;
+    width: 60px;
+    height: 60px;
 }
 
-#sectionFirst .mainContent {
-    height: 100%;
+.sectionWrap {
+    padding: 20px 0;
 }
-#sectionFirst .mainList {
-    position: sticky;
-    top: 200px;
-    width: 300px;
-    height: 300px;
-    margin: 200px auto 0 auto;
-    background-color: black;
+#introduce .myInfo {
+    padding: 50px 0;
+}
+#introduce .profileImg {
+    width: 150px;
+    height: 150px;
+}
+#introduce .profileComment p {
+    font-size: 35px;
+    line-height: 1.6;
+    /* font-family: ; */
+}
+
+/* font-family: 'Roboto', sans-serif; */
+#project .mainProject,
+#project .rightProject {
+    width: 50%;
+}
+#project .mainProject {
+    height: 400px;
+    padding-right: 10px;
+}
+#project .rightProject {
+    gap: 20px;
+    padding-left: 10px;
+}
+
+#project .projectList {
+    height: 200px;
+    width: calc(50% - 10px);
+
+    background-color: #fff;
     border-radius: 8px;
-    transition: all 0.5s;
 }
 
-#sectionFirst .mainList:first-child {
-    background-color: black;
-}
-#sectionFirst .mainList:last-child {
-    background-color: blueviolet;
-}
-#loginFormModal,
-#joinFormModal {
-    position: fixed;
-    top: 0;
+#project .projectMain {
     width: 100%;
-    height: 100%;
-    z-index: 10;
-    transition: all 0.3s;
-}
-#loginFormModal .loginBg,
-#joinFormModal .joinBg {
-    background: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-}
-#loginFormModal .loginForm {
-    width: 400px;
-    height: 350px;
-    padding: 20px;
-    background: #fff;
+    background-color: #fff;
     border-radius: 8px;
-    margin: auto;
-    transform: translateY(calc(50vh - 150px));
-}
-#joinFormModal .joinForm {
-    width: 400px;
-    border-radius: 8px;
-
-    /* height: 800px; */
-    padding: 20px;
-    background: #fff;
-    margin: auto;
-    transform: translateY(calc(50vh - 275px));
-}
-
-#loginFormModal .input-group,
-#joinFormModal .input-group {
-    padding: 10px 0;
-    text-align: left;
+    height: 400px;
 }
