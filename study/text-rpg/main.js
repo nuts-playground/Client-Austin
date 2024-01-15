@@ -10,7 +10,6 @@ const $monsterName = document.querySelector('#monster-name');
 const $monsterHp = document.querySelector('#monster-hp');
 const $monsterAtt = document.querySelector('#monster-att');
 const $message = document.querySelector('#message');
-let game = null;
 
 class Game {
     constructor(name) {
@@ -143,7 +142,6 @@ class Game {
         $gameMenu.removeEventListener('submit', this.onGameMenuInput);
         $battleMenu.removeEventListener('submit', this.onBattleMenuInput);
         this.changeScreen('start');
-        game = null;
     }
 }
 
@@ -162,14 +160,12 @@ class Unit {
 }
 
 class Hero extends Unit {
-    // Unit 을 참조하는 클래스 Hero
     constructor(game, name) {
         super(game, name, 100, 10, 0);
         this.lev = 1;
     }
     attack(target) {
-        super.attack(target); // 부모 클래스의 attack
-        // 부모 클래스 attack 외의 동작
+        super.attack(target);
     }
     heal(monster) {
         this.hp += 20;
@@ -178,8 +174,7 @@ class Hero extends Unit {
     getXp(xp) {
         this.xp += xp;
         if (this.xp >= this.lev * 15) {
-            // 경험치를 다 채우면
-            this.xp -= this.lev * 15; // xp: 5,  lev: 2, maxXp: 15
+            this.xp -= this.lev * 15;
             this.lev += 1;
             this.maxHp += 5;
             this.att += 5;
@@ -198,7 +193,7 @@ class Monster extends Unit {
 $startScreen.addEventListener('submit', (event) => {
     event.preventDefault(); // 폼 전송 막기
     const name = event.target['name-input'].value;
-    game = new Game(name);
+    new Game(name);
 });
 
 // class Game {
