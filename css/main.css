@@ -208,17 +208,42 @@ main {
     height: 400px;
     padding-right: 10px;
 }
-#project .rightProject {
-    gap: 20px;
-    padding-left: 10px;
+.rightProject {
+    margin-top: calc(50vh - 100px);
 }
-
-#project .projectList {
+#gameModal {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 2;
+    /* top: calc(50vh - 100px); */
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 60%);
+}
+.projectList {
     height: 200px;
-    width: calc(50% - 10px);
-
+    width: 200px;
+    position: relative;
     background-color: #fff;
     border-radius: 8px;
+    overflow: hidden;
+}
+.projectList img {
+    width: 100%;
+    height: 100%;
+}
+.overlay {
+    position: absolute;
+    text-align: center;
+    /* z-index: 1; */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 20%);
+    transition: all 0.5s;
 }
 
 #project .projectMain {
@@ -226,4 +251,8 @@ main {
     background-color: #fff;
     border-radius: 8px;
     height: 400px;
+}
+
+.overlay:hover {
+    opacity: 0;
 }
