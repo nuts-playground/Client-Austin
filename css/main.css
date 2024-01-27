@@ -208,7 +208,7 @@ main {
     height: 400px;
     padding-right: 10px;
 }
-.rightProject {
+#gameModal .rightProject {
     margin-top: calc(50vh - 100px);
 }
 #gameModal {
